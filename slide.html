@@ -5,47 +5,35 @@
     <!-- Sliding effect -->
     <script src="slide.js" type="text/javascript"></script>
         <script language="JavaScript" type="text/JavaScript">
-
+        
+//form validation        
 function butCheckForm_onclick() {
-
     var myForm = document.registration;
-
     if(myForm.username.value == "") {
-
         alert("Please enter a username.");
-
         if(myForm.username.value == "") {
-
             myForm.username.focus();
-
+            return false;
         } else {
-
             myForm.email.focus();
         }
-
     }else if(myForm.email.value == "") {
-
         alert("Please enter an email address");
-
         if(myForm.email.value == "") {
-
             myForm.email.focus();
-
+            return false;
         }else {
-
             myForm.password.focus();
         }
     }else if(myForm.password.value == "") {
-
         alert("Please enter a password");
-
         if(myForm.password.value=="") {
-
             myForm.password.focus();
+            return false;
             
         }else{
-
             alert("Thanks for registering.")
+            return true;
         }
     }
 }
@@ -78,10 +66,10 @@ function butCheckForm_onclick() {
             </div>
             <div class="left right">            
                 <!-- Register Form -->
-                <form action="#" method="post">
+                <form name="registration" form action="#" method="post">
                     <h1>Not a member yet? Sign Up!</h1>             
                     <label class="grey" for="signup">Username:</label>
-                    <input class="field" type="text" name="signup" id="signup" value="" size="23" />
+                    <input class="field" type="text" name="username" id="signup" value="" size="23" />
                     <label class="grey" for="email">Email:</label>
                     <input class="field" type="text" name="email" id="email" size="23" />
                     <label class="grey" for="password">Password:</label>
